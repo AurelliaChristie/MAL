@@ -1,13 +1,14 @@
 import React from "react";
 
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import logo from "../images/logo.png";
 
 function NavBar(){
     return(
-        <Navbar bg="primary" variant="dark" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="/">
-                    MAL
+                    <img src={logo} alt="logo" width="60px" height="30px"/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
