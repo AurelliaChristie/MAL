@@ -1,13 +1,22 @@
 import React from "react";
 
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+
+import TopGenres from "../components/Genre/TopGenres";
+import TopAlbums from "../components/Album/TopAlbums";
+import TopArtists from "../components/Artist/TopArtists";
 
 function MusicPage() {
     return (
         <Container fluid>
-            <div>
-                <h1>Music Page</h1>
-            </div>
+            <Row>
+                <Col></Col>
+                <Col sm={4}>
+                    <TopGenres />
+                </Col>
+            </Row>
+                <TopAlbums />
+                <TopArtists />
         </Container>
     )
 }
