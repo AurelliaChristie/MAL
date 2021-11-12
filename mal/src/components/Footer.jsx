@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
     color: white;
     bottom: 0;
     width: 100%;
-    position: absolute;
+    position: static;
 `
 
 function Footer(){
