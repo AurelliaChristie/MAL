@@ -8,7 +8,7 @@ import "./GenreCard.css";
 function GenreCard({genre}){
     return(
     <div className="mb-4 genre" style={{ width: '10rem' }}>
-        <Link to="/genre/id/artists">
+        <Link to={`/genre/${genre.id}/artists`}>
             <Card className="text-white genre" >
                 <Card.Img src={genre.picture_medium} alt={genre.name}/>
                 <Card.ImgOverlay className="d-flex justify-content-center align-items-center">

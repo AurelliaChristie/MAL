@@ -22,9 +22,9 @@ function MainRouter(){
                 <Route path="/signup" component={SignupPage} exact/>
                 <Route path="/login" component={LoginPage} exact/>
                 <Route path="/playlist" component={PlaylistPage} exact/>
-                <Route path="/album/id" component={AlbumPage} exact/>
-                <Route path="/artist/id" component={ArtistPage} exact/>
-                <Route path="/genre/id/artists" component={GenreArtistsPage} exact/>
+                <Route path="/album/:albumId" component={AlbumPage} exact/>
+                <Route path="/artist/:artistId" component={ArtistPage} exact/>
+                <Route path="/genre/:genreId/artists" component={GenreArtistsPage} exact/>
                 <Route path="/genre" component={GenrePage} exact/>
                 <Route path="/music" component={MusicPage} exact/>
                 <Route path="/" component={HomePage} exact/>

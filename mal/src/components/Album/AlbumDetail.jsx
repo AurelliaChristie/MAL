@@ -32,7 +32,7 @@ function AlbumDetail({album}){
           <Row className="text-center">
             {
                 album.genres.data.map((genre) => (
-                    <Button variant="outline-primary" href="/genre/id/artists" className="w-auto ms-2">{genre.name}</Button>
+                    <Button key={genre.id} variant="outline-primary" href={`/genre/${genre.id}/artists`} className="w-auto ms-2">{genre.name}</Button>
                 ))
             }    
           </Row>

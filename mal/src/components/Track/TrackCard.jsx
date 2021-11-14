@@ -1,4 +1,5 @@
 import React from "react";
+import ReactAudioPlayer from "react-audio-player";
 
 import "./TrackCard.css"
 
@@ -14,12 +15,16 @@ function TrackCard({track}){
             <div>
                 <h6 className="track-name mb-0 mt-2">{track.title}</h6>
                 <small className="track-artist mt-0 mb-2">{track.artist.name}</small>
+                
             </div>
         </div>
-        <div className="my-auto">
-            <FontAwesomeIcon icon="play" size="lg" className="mx-3"/> 
-            <FontAwesomeIcon icon="heart" size="lg" className="mx-3"/> 
-            <FontAwesomeIcon icon="share-alt" size="lg" className="mx-3"/> 
+        <div className="my-auto d-flex">
+            <ReactAudioPlayer
+                src={track.preview}
+                controlsList="nodownload"
+                controls
+            />
+            <FontAwesomeIcon icon="heart" size="sm" className="mx-3 my-auto"/>
         </div>
     </div>
     )
