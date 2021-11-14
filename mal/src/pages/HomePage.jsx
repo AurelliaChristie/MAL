@@ -25,8 +25,8 @@ function HomePage() {
                 <IsiText>
                     <h1><span style={{color: "#6558f5", fontWeight: "bold"}}>Music</span> for Everyone</h1>
                     <p style={{fontSize: "20px", textAlign: "center"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ratione, in animi minus necessitatibus cum. Commodi aperiam non cumque est quidem. Eveniet, voluptate. Deserunt nulla est voluptate quasi sunt! Commodi quisquam aliquam tempore, aperiam eos architecto. Animi, molestiae assumenda temporibus harum, enim possimus facere esse ea nihil voluptatibus deserunt ipsa.</p>
-                    <Button href="/Login" variant="dark" size="lg" style={{marginRight: "20px"}}>Get Started</Button>
-                    <Button href="/Music" variant="dark" size="lg" style={{marginLeft: "20px"}}>Find Songs</Button>
+                    <Button href="/login" variant="dark" size="lg" style={{marginRight: "20px"}}>Get Started</Button>
+                    <Button href="/music" variant="dark" size="lg" style={{marginLeft: "20px"}}>Find Songs</Button>
                 </IsiText>
                 <IsiGambar>
                     <img src={Gambar1} alt="" width="600px" height="600px"/>

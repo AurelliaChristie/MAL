@@ -1,12 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
-import {Container, Row} from "react-bootstrap";
+import {Container, Row, Col} from "react-bootstrap";
 
 import GenreCard from "./GenreCard";
 
 
-function TopGenres(){
+function AllGenres(){
 
   const dummy_data={
     "data": [
@@ -237,15 +236,14 @@ function TopGenres(){
     <div className="my-3">
       <Container fluid>
         <Row>
-          <h3 className="d-inline mb-3">Top Genres</h3>
-          <Link to="/genre" className="d-inline text-end">Browse All</Link>
+          <h3 className="mb-3">Genres</h3>
         </Row>
         <Row>
             {
-                dummy_data.data.slice(1,4).map((genre) => (
-                  <div className="d-flex flex-column justify-content-center align-items-center">
+                dummy_data.data.map((genre) => (
+                  <Col lg={2} md={3} sm={4} xs={6}>
                     <GenreCard genre={genre} key={genre.id}/>
-                  </div>
+                  </Col>
                 ))
             }
         </Row>
@@ -254,4 +252,4 @@ function TopGenres(){
   )
 }
 
-export default TopGenres;
+export default AllGenres;
