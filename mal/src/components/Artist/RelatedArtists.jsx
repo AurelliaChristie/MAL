@@ -6,7 +6,7 @@ import {Container, Row, Col} from "react-bootstrap";
 import ArtistCard from "./ArtistCard";
 
 
-function TopArtists({artists}){
+function RelatedArtists({artists}){
   
   const settings = {
     dots: false,
@@ -50,7 +50,7 @@ function TopArtists({artists}){
       <div className="my-3">
         <Container fluid>
           <Row>
-            <h3 className="mb-3">Top Artists</h3>
+            <h3 className="mb-3">Fans Also Like</h3>
           </Row>
           <Slider {...settings} className="mx-2">
               {
@@ -66,4 +66,4 @@ function TopArtists({artists}){
     )
 }
 
-export default TopArtists;
+export default RelatedArtists;
