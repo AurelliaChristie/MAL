@@ -1,9 +1,10 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, {useContext, useState, useEffect, useRef} from "react";
 import ReactAudioPlayer from "react-audio-player";
 import { useHistory } from "react-router";
 
 import { UserContext } from "../../contexts/UserContext";
 import { FavoriteContext } from  "../../contexts/FavoriteContext";
+import { PlayContext } from "../../contexts/PlayContext";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 
@@ -26,10 +27,13 @@ function convertDuration(duration){
 function AlbumTrack({track, album}){
 
     let history = useHistory();
-    
+    let audio = useRef(null);
+
     const {user} = useContext(UserContext);
     const {tracks, dispatchTracks} = useContext(FavoriteContext);
+    const {title, dispatchPlay} = useContext(PlayContext);
     const [fav, setFav] = useState(false);
+    const [play, setPlay] = useState(null);
 
     useEffect(() => {
         if(user.loggedIn !== null){
@@ -40,7 +44,7 @@ function AlbumTrack({track, album}){
                 setFav(false);
             }
         }
-    },[user.loggedIn, track.id])
+    },[])
     
 
     const handleFavorite = (event) => {
@@ -74,20 +78,40 @@ function AlbumTrack({track, album}){
         }
     }
 
+    useEffect(() => {
+        console.log(title)
+        if(title.play && title.play !== play){
+            audio.audioEl.current.pause()
+        }
+    }, [title])
+
+    const handlePlay = (event) => {
+        event.preventDefault();
+        setPlay(track.title);
+        dispatchPlay({
+            type: "PLAY",
+            title: track.title
+        })
+    }
+
+
     return(
         <tr key={track.id}>
-            <td>{track.track_position}</td>
-            <td>{track.title}</td>
-            <td className="text-center">{convertDuration(track.duration)}</td>
-            <td className="d-flex justify-content-end">
+            <td className="align-middle">{track.track_position}</td>
+            <td className="align-middle">{track.title}</td>
+            <td className="text-center align-middle">{convertDuration(track.duration)}</td>
+            <td className="align-middle text-end">
                 <ReactAudioPlayer
                     src={track.preview}
                     controlsList="nodownload"
                     controls
-                /> 
-
+                    ref={(element) => { audio = element; }}
+                    onPlay={(e) => handlePlay(e)}
+                />
+            </td>
+            <td className="align-middle text-center">
                 <button onClick={(e) => handleFavorite(e)}>
-                    <FontAwesomeIcon icon="heart" size="sm" className={`mx-3 my-auto ${fav ? "fav": "text-black"}`}/>
+                    <FontAwesomeIcon icon="heart" size="lg" className={`${fav ? "fav": "text-black btn-heart"}`}/>
                 </button>
             </td>
         </tr>
