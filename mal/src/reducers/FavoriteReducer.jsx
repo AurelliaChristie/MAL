@@ -5,20 +5,22 @@ export const FavoriteReducer = (tracks, action) => {
             localStorage.setItem(action.user, JSON.stringify({
                 "name": profile.name,
                 "pass": profile.pass,
-                 "favorite": [
-                ...tracks,
-                {   
-                    id: action.id,
-                    album:{
-                        cover_small: action.album.cover_small
-                    },
-                    title: action.title,
-                    artist:{
-                        name: action.artist.name
-                    },
-                    preview: action.preview
-                }
-            ]}))
+                "favorite": [
+                    ...tracks,
+                    {   
+                        id: action.id,
+                        album:{
+                            cover_small: action.album.cover_small
+                        },
+                        title: action.title,
+                        artist:{
+                            name: action.artist.name
+                        },
+                        preview: action.preview
+                    }
+                ],
+                "follow": profile.follow
+            }))
             return [
                 ...tracks,
                 {   
@@ -40,7 +42,9 @@ export const FavoriteReducer = (tracks, action) => {
                 "pass": profile.pass,
                 "favorite": [
                 ...fav
-            ]}))
+                ],
+                "follow": profile.follow
+            }))
             return [
                 ...fav
             ];
