@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {Container, Row, Col, Button} from "react-bootstrap";
 import "./AlbumDetail.css";
@@ -29,10 +30,12 @@ function AlbumDetail({album}){
           <Row>
             <p className="lead">{album.nb_tracks} Songs • {convertDuration(album.duration)} </p>
           </Row>
-          <Row className="text-center">
+          <Row>
             {
                 album.genres.data.map((genre) => (
-                    <Button key={genre.id} variant="outline-primary" href={`/genre/${genre.id}/artists`} className="w-auto ms-2">{genre.name}</Button>
+                    <Link to={`/genre/${genre.id}/artists`}>
+                      <Button key={genre.id} variant="outline-primary" className="w-auto">{genre.name}</Button>
+                    </Link>
                 ))
             }    
           </Row>

@@ -10,6 +10,7 @@ import AlbumPage from "../pages/AlbumPage";
 import PlaylistPage from "../pages/PlaylistPage";
 import SignupPage from "../pages/SignupPage";
 import LoginPage from "../pages/LoginPage";
+import ProfilePage from "../pages/ProfilePage";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -19,6 +20,7 @@ function MainRouter(){
         <Router>
             <Navbar />
             <Switch>
+                <Route path="/profile" component={ProfilePage} exact/>
                 <Route path="/signup" component={SignupPage} exact/>
                 <Route path="/login" component={LoginPage} exact/>
                 <Route path="/playlist" component={PlaylistPage} exact/>

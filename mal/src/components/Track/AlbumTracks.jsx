@@ -1,26 +1,11 @@
 import React from "react";
-import ReactAudioPlayer from "react-audio-player";
 
 import {Container, Row, Table} from "react-bootstrap";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-function convertDuration(duration){
-    let minutes = Math.floor(duration/60);
-    let seconds = Math.floor(duration % 60);
-    if(minutes > 0 && seconds >= 10){
-        return `${minutes}:${seconds}`;
-    } else if(minutes > 0 && seconds <10) {
-        return `${minutes}:0${seconds}`;
-    } else if(seconds < 10){
-        return `00:0${seconds}`;
-    } else{
-        return `00:${seconds}`;
-    }
-}
+import AlbumTrack from "./AlbumTrack";
 
 
-function AlbumTracks({tracks}){  
+function AlbumTracks({tracks, album}){  
   return(
     <div className="my-3">
       <Container fluid>
@@ -39,21 +24,7 @@ function AlbumTracks({tracks}){
             </thead>
             <tbody>
                 {
-                    tracks.map((track) => (
-                        <tr key={track.id}>
-                            <td>{track.track_position}</td>
-                            <td>{track.title}</td>
-                            <td className="text-center">{convertDuration(track.duration)}</td>
-                            <td className="d-flex justify-content-end">
-                                <ReactAudioPlayer
-                                    src={track.preview}
-                                    controlsList="nodownload"
-                                    controls
-                                /> 
-                                <FontAwesomeIcon icon="heart" size="sm" className="mx-3 my-auto"/> 
-                            </td>
-                        </tr>
-                    ))
+                    tracks.map((track) => <AlbumTrack track={track} album={album} />)
                 }
             </tbody>
             </Table>
