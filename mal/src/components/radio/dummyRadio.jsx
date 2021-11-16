@@ -170,7 +170,7 @@ return(
       <Container fluid>
         <Row>
             {
-                dummy_data.data.slice(0,15).map((playlist) => (
+                dummy_data.data.map((playlist) => (
                     <Col lg={2} md={3} sm={4} xs={6}>
                   <div className="d-flex flex-column justify-content-center align-items-center">
                     <PlaylistCard playlist={playlist} key={playlist.id}/>

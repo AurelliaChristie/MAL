@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { Container} from "react-bootstrap";
-import SearchBar from "../components/Searchbar";
+import SearchBar from "../components/SearchBar/Searchbar";
 import TopRadio from "../components/radio/dummyRadio";
 import { useParams } from "react-router-dom";
 

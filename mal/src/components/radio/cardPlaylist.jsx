@@ -7,8 +7,8 @@ function PlaylistCard({playlist}){
     return(
     <div className="playlist my-4">
         <Card>
-            <Link to={`/playlist/{playlist.id}`} className="playlist text-white">
-            <Card.Img src={playlist.picture_big} alt={playlist.title} />
+            <Link to={`/playlist/${playlist.id}`} className="playlist text-white">
+            <Card.Img src={playlist.picture_medium} alt={playlist.title} />
             <Card.ImgOverlay className="d-flex justify-content-center align-items-center">
                 <Card.Title>{playlist.title}</Card.Title>
             </Card.ImgOverlay>

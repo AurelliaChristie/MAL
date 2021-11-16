@@ -1,7 +1,8 @@
 import React from "react";
-
-import {Container, Row, Col, Button} from "react-bootstrap";
-import "./Album/AlbumDetail.css";
+// import ReactAudioPlayer from "react-audio-player";
+import {Container, Row, Button, Col} from "react-bootstrap";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ import "./Playlist.css";
 
 function convertDuration(duration){
     let hours = Math.floor(duration/3600);
@@ -15,8 +16,8 @@ function convertDuration(duration){
     }
 }
 
-function PlaylistDetail({playlist}){
-    return(
+function PlaylistDetails({playlist}){  
+  return(
     <Container className="py-5">
       <Row>
         <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end">
@@ -28,10 +29,19 @@ function PlaylistDetail({playlist}){
           </Row>
           <Row>
             <p className="lead">{playlist.nb_tracks} Songs • {convertDuration(playlist.duration)} </p>
-          </Row>      
+          </Row>
+          <Row className="text-center">
+            {
+                playlist.genres.data.map((genre) => (
+                    <Button key={genre.id} variant="outline-primary" href={`/playlist/${genre.id}`} className="w-auto ms-2">{genre.name}</Button>
+                ))
+               
+            }    
+          </Row>
         </Col>
         </Row>
       </Container>
     )
 };
-export default PlaylistDetail;
+
+export default PlaylistDetails;
