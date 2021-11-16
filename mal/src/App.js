@@ -29,7 +29,7 @@ function App(){
             <FavoriteContext.Provider value = {{tracks, dispatchTracks}}>
                 <FollowContext.Provider value = {{artists, dispatchArtists}}>
                     <PlayContext.Provider value = {{title, dispatchPlay}}>
-                        <MainRouter />
+                        <MainRouter/>
                     </PlayContext.Provider>
                 </FollowContext.Provider>
             </FavoriteContext.Provider>

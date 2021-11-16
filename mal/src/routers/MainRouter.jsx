@@ -15,12 +15,13 @@ import ProfilePage from "../pages/ProfilePage";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import ScrollToTop from "../components/ScrollToTop";
 
 function MainRouter(){
     return(
         <Router>
             <Navbar />
+            <ScrollToTop />
             <Switch>
                 <Route path="/profile" component={ProfilePage} exact/>
                 <Route path="/signup" component={SignupPage} exact/>
