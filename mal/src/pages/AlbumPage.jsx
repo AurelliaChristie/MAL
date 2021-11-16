@@ -779,7 +779,7 @@ function AlbumPage() {
                 </Col>
             </Row>
             <Row>
-                <AlbumTracks tracks={data.data}/>
+                <AlbumTracks tracks={data.data} album={dummy_data}/>
             </Row>
         </Container>
     )

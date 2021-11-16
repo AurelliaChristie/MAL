@@ -7,9 +7,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlay, faPause, faHeart, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faPause, faHeart, faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPlay, faPause, faHeart,faSearch)
+library.add(faPlay, faPause, faHeart, faSearch, faUserCircle);
 
 ReactDOM.render(
     <React.StrictMode>
