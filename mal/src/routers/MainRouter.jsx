@@ -17,13 +17,15 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
+import PrivateRoute from "./PrivateRoute";
+
 function MainRouter(){
     return(
         <Router>
             <Navbar />
             <ScrollToTop />
             <Switch>
-                <Route path="/profile" component={ProfilePage} exact/>
+                <PrivateRoute path="/profile" component={ProfilePage} exact/>
                 <Route path="/signup" component={SignupPage} exact/>
                 <Route path="/login" component={LoginPage} exact/>
                 <Route path="/playlist" component={RadioPage} exact/>
