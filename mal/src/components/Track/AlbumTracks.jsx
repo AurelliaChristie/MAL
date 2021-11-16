@@ -20,6 +20,7 @@ function AlbumTracks({tracks, album}){
                     <th>Track</th>
                     <th className="text-center">Duration</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>

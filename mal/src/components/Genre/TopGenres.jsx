@@ -13,13 +13,13 @@ function TopGenres({genres}){
       <Container fluid>
         <Row>
           <h3 className="d-inline mb-3">Top Genres</h3>
-          <Link to="/genre" className="d-inline text-end">Browse All</Link>
+          <Link to="/genre" className="d-inline text-end link">Browse All</Link>
         </Row>
         <Row>
             {
-                genres.slice(1,4).map((genre) => (
-                  <div className="d-flex flex-column justify-content-center align-items-center">
-                    <GenreCard genre={genre} key={genre.id}/>
+                Array.isArray(genres) && genres.slice(1,4).map((genre) => (
+                  <div className="d-flex flex-column justify-content-center align-items-center" key={genre.id}>
+                    <GenreCard genre={genre}/>
                   </div>
                 ))
             }

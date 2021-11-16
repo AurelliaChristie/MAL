@@ -54,9 +54,9 @@ function RelatedArtists({artists}){
           </Row>
           <Slider {...settings} className="mx-2">
               {
-                  artists.map((artist => (
-                    <Col sm={3} className="d-flex justify-content-center">
-                      <ArtistCard artist={artist} key={artist.id}/>
+                  Array.isArray(artists) && artists.map((artist => (
+                    <Col sm={3} className="d-flex justify-content-center" key={artist.id}>
+                      <ArtistCard artist={artist}/>
                     </Col>
                   )))
               }

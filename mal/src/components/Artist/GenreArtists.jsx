@@ -15,9 +15,9 @@ function GenreArtists({artists}){
         </Row>
         <Row>
             {
-                artists.map((artist) => (
-                  <Col lg={2} md={3} sm={4} xs={6}>
-                    <ArtistCard artist={artist} key={artist.id}/>
+                Array.isArray(artists) && artists.map((artist) => (
+                  <Col lg={2} md={3} sm={4} xs={6} key={artist.id}>
+                    <ArtistCard artist={artist}/>
                   </Col>
                 ))
             }

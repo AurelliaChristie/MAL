@@ -92,10 +92,10 @@ function LoginPage() {
                                 </div>
                             </Form.Group>
                             <div className="submit-btn text-center">
-                                <Button variant="primary" type="submit" className="btn mb-1" id="submit">Submit</Button> <br/>
+                                <Button variant="primary" type="submit" className="btn btn-dark mb-1" id="submit">Submit</Button> <br/>
                                 <small>
                                     <span>Don't have an account? | </span>
-                                    <Link to="/signup">Sign Up</Link>
+                                    <Link to="/signup" className="link">Sign Up</Link>
                                 </small>
                             </div>
                         </Form>

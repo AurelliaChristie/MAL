@@ -14,9 +14,9 @@ function AllGenres({genres}){
         </Row>
         <Row>
             {
-                genres.map((genre) => (
-                  <Col lg={2} md={3} sm={4} xs={6}>
-                    <GenreCard genre={genre} key={genre.id}/>
+                Array.isArray(genres) && genres.map((genre) => (
+                  <Col lg={2} md={3} sm={4} xs={6} key={genre.id}>
+                    <GenreCard genre={genre}/>
                   </Col>
                 ))
             }

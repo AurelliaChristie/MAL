@@ -14,9 +14,9 @@ function ArtistTopTracks({tracks}){
         </Row>
         <Row className="mt-4">
             {
-                tracks.map((track) => (
-                  <div className="d-flex flex-column justify-content-center">
-                    <TrackCard track={track} key={track.id}/>
+                Array.isArray(tracks) && tracks.map((track) => (
+                  <div className="d-flex flex-column justify-content-center" key={track.id}>
+                    <TrackCard track={track}/>
                   </div>
                 ))
             }

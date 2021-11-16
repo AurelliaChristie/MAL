@@ -24,7 +24,7 @@ function ArtistDetail({artist}){
               setFol(false);
           }
       }
-    },[user.loggedIn, artist.id])
+    },[])
 
     const handleFollow = (event) => {
       event.preventDefault();
@@ -65,7 +65,7 @@ function ArtistDetail({artist}){
             <p className="lead">{artist.nb_album} Albums</p>
           </Row>
           <Row className="text-center">
-            <Button variant={`${fol ? 'outline-primary' : 'primary'}`} onClick={(e) => handleFollow(e)} className="w-auto ms-2">{`${fol ? 'Unfollow': 'Follow'}`}</Button>
+            <Button variant={`${fol ? 'outline-dark' : 'dark'}`} onClick={(e) => handleFollow(e)} className="w-auto ms-2 btn-custom">{`${fol ? 'Unfollow': 'Follow'}`}</Button>
           </Row>
         </Col>
         </Row>

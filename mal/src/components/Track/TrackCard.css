@@ -10,18 +10,22 @@ button {
   color: #6558f5;
 }
 
+.btn-heart:hover {
+  color: #6558f5 !important;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   audio {
     width: 20px !important;
   }
-  .track-name{
+  .track-name {
     font-size: 0.7rem !important;
   }
-  .track-artist{
+  .track-artist {
     font-size: 0.7rem !important;
   }
-  td{
+  td {
     font-size: 0.8rem !important;
   }
 }
