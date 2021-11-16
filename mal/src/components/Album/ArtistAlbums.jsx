@@ -5,7 +5,7 @@ import {Container, Row, Col} from "react-bootstrap";
 
 import AlbumCard from "./AlbumCard";
 
-function TopAlbums({albums}){
+function ArtistAlbums({albums}){
 
     const settings = {
       dots: false,
@@ -49,7 +49,7 @@ function TopAlbums({albums}){
     <div className="my-3">
       <Container fluid>
         <Row>
-          <h3 className="mb-3">Top Albums</h3>
+          <h3 className="mb-3">Albums</h3>
         </Row>
         <Slider {...settings} className="mx-2">
             {
@@ -65,4 +65,4 @@ function TopAlbums({albums}){
   )
 }
 
-export default TopAlbums;
+export default ArtistAlbums;
