@@ -23,7 +23,7 @@ function Layer3(){
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item">Universitas Mikroskil</li>
                                     </ul>
-                                    <p className="card-text">Hi guys, hopefully the songs we provide can accompany your daily activities & lift up your mood! Have a nice day!</p>
+                                    <p className="card-text">Music can heals the wounds, that medicine cannot touch and Music is the healing force of the universe.</p>
                                 </div>
                                 <div className="icon">
                                     <a href="https://github.com/MervinWin" className="card-text" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
@@ -66,7 +66,7 @@ function Layer3(){
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item">Universitas Negeri Surabaya</li>
                                     </ul>
-                                    <p className="card-text">Hi guys, hopefully the songs we provide can accompany your daily activities & lift up your mood! Have a nice day!</p>
+                                    <p className="card-text">Boost your mood with music and enjoy the day with MAL. Have a precious day all of you guys.</p>
                                 </div>
                                 <div className="icon">
                                     <a href="https://www.linkedin.com/in/lathifatuz-zuhroh/" className="card-text" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-linkedin" viewBox="0 0 16 16">
