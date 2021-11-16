@@ -1,3 +1,27 @@
 .track {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
+button {
+  border: none;
+}
+
+.fav {
+  color: #6558f5;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  audio {
+    width: 20px !important;
+  }
+  .track-name{
+    font-size: 0.7rem !important;
+  }
+  .track-artist{
+    font-size: 0.7rem !important;
+  }
+  td{
+    font-size: 0.8rem !important;
+  }
+}

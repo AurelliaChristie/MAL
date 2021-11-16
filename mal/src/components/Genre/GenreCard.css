@@ -3,3 +3,38 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
   cursor: pointer;
 }
+
+.d-flex.justify-content-end{
+  align-items: flex-start !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .artist-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .artist-name{
+    width: 150px !important;
+  }
+  h3.mb-3{
+    padding-left: 20px !important;
+  }
+  div.container-fluid{
+    padding-left: 20px;
+  }
+  div.col{
+    padding-left: 0px;
+  }
+  div.py-5.p-3.my-3.mx-auto.my-5.w-50.sl-card.card{
+    width: 300px !important;
+  }
+  div.text-center.row{
+    display: flex !important;
+    justify-content: center !important;
+  }
+  div.text-center.text-sm-end.col-lg-2.col-md-5.col-sm-6.col-12{
+    margin-bottom: 20px;
+  }
+}

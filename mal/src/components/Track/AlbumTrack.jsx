@@ -5,11 +5,25 @@ import { useHistory } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 import { FavoriteContext } from  "../../contexts/FavoriteContext";
 
-import "./TrackCard.css"
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 
-function TrackCard({track}){
+import "./AlbumTrack.css";
+
+function convertDuration(duration){
+    let minutes = Math.floor(duration/60);
+    let seconds = Math.floor(duration % 60);
+    if(minutes > 0 && seconds >= 10){
+        return `${minutes}:${seconds}`;
+    } else if(minutes > 0 && seconds <10) {
+        return `${minutes}:0${seconds}`;
+    } else if(seconds < 10){
+        return `00:0${seconds}`;
+    } else{
+        return `00:${seconds}`;
+    }
+}
+
+function AlbumTrack({track, album}){
 
     let history = useHistory();
     
@@ -47,7 +61,7 @@ function TrackCard({track}){
                     user: user.loggedIn,
                     id: track.id,
                     album:{
-                        cover_small: track.album.cover_small
+                        cover_small: album.cover_small
                     },
                     title: track.title,
                     artist:{
@@ -61,29 +75,23 @@ function TrackCard({track}){
     }
 
     return(
-    <div className="track mb-4 d-flex justify-content-between text-capitalize">
-        <div className="d-flex">
-            <div>
-                <img src={track.album.cover_small} alt={track.title} className="track-img me-2" />
-            </div>
-            <div>
-                <h6 className="track-name mb-0 mt-2">{track.title}</h6>
-                <small className="track-artist mt-0 mb-2">{track.artist.name}</small>
-                
-            </div>
-        </div>
-        <div className="my-auto d-flex">
-            <ReactAudioPlayer
-                src={track.preview}
-                controlsList="nodownload"
-                controls
-            />
-            <button onClick={(e) => handleFavorite(e)}>
-                <FontAwesomeIcon icon="heart" size="sm" className={`mx-3 my-auto ${fav ? "fav": "text-black"}`}/>
-            </button>
-        </div>
-    </div>
+        <tr key={track.id}>
+            <td>{track.track_position}</td>
+            <td>{track.title}</td>
+            <td className="text-center">{convertDuration(track.duration)}</td>
+            <td className="d-flex justify-content-end">
+                <ReactAudioPlayer
+                    src={track.preview}
+                    controlsList="nodownload"
+                    controls
+                /> 
+
+                <button onClick={(e) => handleFavorite(e)}>
+                    <FontAwesomeIcon icon="heart" size="sm" className={`mx-3 my-auto ${fav ? "fav": "text-black"}`}/>
+                </button>
+            </td>
+        </tr>
     )
 };
 
-export default TrackCard;
+export default AlbumTrack;
