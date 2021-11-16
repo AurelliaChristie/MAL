@@ -5,13 +5,13 @@ import {Container, Row, Col} from "react-bootstrap";
 import ArtistCard from "./ArtistCard";
 
 
-function GenreArtists({artists}){
+function GenreArtists({artists, genre}){
 
   return(
     <div className="my-3">
       <Container fluid>
         <Row>
-          <h3 className="mb-3">Genre Name - Artists</h3>
+          <h3 className="mb-3">{genre} - Artists</h3>
         </Row>
         <Row>
             {

@@ -32,7 +32,7 @@ function MainRouter(){
                 <Route path="/playlist/:playlistId" component={PlaylistPage} exact/>
                 <Route path="/album/:albumId" component={AlbumPage} exact/>
                 <Route path="/artist/:artistId" component={ArtistPage} exact/>
-                <Route path="/genre/:genreId/artists" component={GenreArtistsPage} exact/>
+                <Route path="/genre/:genreId/:genreName/artists" component={GenreArtistsPage} exact/>
                 <Route path="/genre" component={GenrePage} exact/>
                 <Route path="/music" component={MusicPage} exact/>
                 <Route path="/" component={HomePage} exact/>

@@ -64,7 +64,6 @@ function TrackCard({track}){
     }
 
     useEffect(() => {
-        console.log(title)
         if(title.play && title.play !== play){
             audio.audioEl.current.pause()
         }
