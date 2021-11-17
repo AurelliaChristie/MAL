@@ -19,6 +19,7 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
 import PrivateRoute from "./PrivateRoute";
+import NotFoundPage from "../pages/NotFoundPage";
 
 function MainRouter(){
     return(
@@ -38,6 +39,7 @@ function MainRouter(){
                 <Route path="/genre" component={GenrePage} exact/>
                 <Route path="/music" component={MusicPage} exact/>
                 <Route path="/" component={HomePage} exact/>
+                <Route path="*" component={NotFoundPage} exact/>
             </Switch>
             <Footer />
         </Router>

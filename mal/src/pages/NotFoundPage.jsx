@@ -1,13 +1,14 @@
 import React from 'react';
 import Lottie from "react-lottie";
-import { Container } from 'react-bootstrap';
-import loadingSpinner from "../lotties/loading-spinner";
+import { Container, Button } from 'react-bootstrap';
+import notFound from "../lotties/not-found";
+import { Link } from 'react-router-dom';
 
-function Loading() {
+function NotFoundPage() {
     const defaultOptions = {
         loop: true,
         autoplay: true,
-        animationData: loadingSpinner,
+        animationData: notFound,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
         }
@@ -17,11 +18,13 @@ function Loading() {
         <Container className="d-flex flex-column align-items-center justify-content-center h-100">
             <Lottie
                 options={defaultOptions}
-                height={400}
-                width={400}
             />
+            <p className="display-4 text-center">PAGE NOT FOUND</p>
+            <Link to="/">
+                <Button variant="dark" className="btn-custom">Back to Home</Button>
+            </Link>
         </Container>
     )
 
 }
-export default Loading;
+export default NotFoundPage;
