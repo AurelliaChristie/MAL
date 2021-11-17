@@ -32,10 +32,12 @@ function AlbumDetail({album}){
           </Row>
           <Row>
             {
-                Array.isArray(album.genres.data) && album.genres.data.map((genre) => (
-                    <Link to={`/genre/${genre.id}/artists`} key={genre.id}>
+                album.genres && album.genres.data.map((genre) => (
+                  <Col key={genre.id}>
+                    <Link to={`/genre/${genre.id}/${genre.name}/artists`}>
                       <Button variant="outline-dark" className="w-auto btn-custom">{genre.name}</Button>
                     </Link>
+                  </Col>
                 ))
             }    
           </Row>

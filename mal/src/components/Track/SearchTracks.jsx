@@ -12,7 +12,7 @@ function SearchTracks({tracks, keyword}){
         </Row>
         <Row className="mt-4">
             {
-                tracks.map((track) => (
+                Array.isArray(tracks) && tracks.map((track) => (
                   <div className="d-flex flex-column justify-content-center">
                     <TrackCard track={track} key={track.id}/>
                   </div>
