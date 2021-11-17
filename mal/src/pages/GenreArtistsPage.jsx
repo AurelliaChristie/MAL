@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 import GenreArtists from "../components/Artist/GenreArtists";
+import Searchbar from "../components/Searchbar";
 
 function GenreArtistsPage() {
 
@@ -606,6 +607,7 @@ function GenreArtistsPage() {
     return (
         <Container fluid>
             <Row>
+              <Searchbar/>
             </Row>
             <Row>
                 <Col>

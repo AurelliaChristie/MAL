@@ -8,6 +8,7 @@ import ArtistDetail from "../components/Artist/ArtistDetail";
 import ArtistTopTracks from "../components/Track/ArtistTopTracks";
 import ArtistAlbums from "../components/Album/ArtistAlbums";
 import RelatedArtists from "../components/Artist/RelatedArtists";
+import Searchbar from "../components/Searchbar";
 
 function ArtistPage() {
 
@@ -1185,6 +1186,7 @@ function ArtistPage() {
     return (
         <Container fluid>
             <Row>
+              <Searchbar/>
             </Row>
             <Row>
                 <Col>

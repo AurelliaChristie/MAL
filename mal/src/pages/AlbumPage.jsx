@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import AlbumDetail from "../components/Album/AlbumDetail";
 import AlbumTracks from "../components/Track/AlbumTracks";
+import Searchbar from "../components/Searchbar";
 
 function AlbumPage() {
 
@@ -772,6 +773,7 @@ function AlbumPage() {
     return (
         <Container fluid>
             <Row>
+              <Searchbar/>
             </Row>
             <Row>
                 <Col>

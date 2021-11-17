@@ -7,11 +7,12 @@ import GenrePage from "../pages/GenrePage";
 import GenreArtistsPage from "../pages/GenreArtistsPage";
 import ArtistPage from "../pages/ArtistPage";
 import AlbumPage from "../pages/AlbumPage";
-import RadioPage from "../pages/RadioPage";
 import PlaylistPage from "../pages/PlaylistPage";
+import PlaylistDetailPage from "../pages/PlaylistDetailPage";
 import SignupPage from "../pages/SignupPage";
 import LoginPage from "../pages/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
+import SearchResultPage from "../pages/SearchResultPage";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -28,8 +29,9 @@ function MainRouter(){
                 <PrivateRoute path="/profile" component={ProfilePage} exact/>
                 <Route path="/signup" component={SignupPage} exact/>
                 <Route path="/login" component={LoginPage} exact/>
-                <Route path="/playlist" component={RadioPage} exact/>
-                <Route path="/playlist/:playlistId" component={PlaylistPage} exact/>
+                <Route path="/search/:keyword" component={SearchResultPage} exact/>
+                <Route path="/playlist/:playlistId" component={PlaylistDetailPage} exact/>
+                <Route path="/playlist" component={PlaylistPage} exact/>
                 <Route path="/album/:albumId" component={AlbumPage} exact/>
                 <Route path="/artist/:artistId" component={ArtistPage} exact/>
                 <Route path="/genre/:genreId/:genreName/artists" component={GenreArtistsPage} exact/>

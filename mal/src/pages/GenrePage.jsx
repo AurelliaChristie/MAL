@@ -3,6 +3,7 @@ import React, {useEffect} from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import AllGenres from "../components/Genre/AllGenres";
+import Searchbar from "../components/Searchbar";
 
 function GenrePage() {
 
@@ -247,6 +248,7 @@ function GenrePage() {
     return (
         <Container fluid>
             <Row>
+              <Searchbar/>
             </Row>
             <Row>
                 <Col>
