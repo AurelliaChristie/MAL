@@ -9,9 +9,11 @@ import TopArtists from "../components/Artist/TopArtists";
 
 import "./MusicPage.css";
 import Searchbar from "../components/Searchbar";
+import Loading from "../components/Loading";
 
 function MusicPage() {
 
+    let [load, setLoad] = useState(true);
     let [tracks, setTracks] = useState("");
     let [genres, setGenres] = useState("");
     let [albums, setAlbums] = useState("");
@@ -22,7 +24,8 @@ function MusicPage() {
           try{
             const fetchTracks = await fetch(`http://deezer.eddypermana.com/chart/0/tracks`)
             const tracks = await fetchTracks.json();
-            setTracks(tracks);   
+            setTracks(tracks);
+            setLoad(false);   
           } catch(error){
               console.log('getTopTracks', error);
           }
@@ -35,7 +38,8 @@ function MusicPage() {
           try{
             const fetchGenres = await fetch(`http://deezer.eddypermana.com/genre`)
             const genres = await fetchGenres.json();
-            setGenres(genres);      
+            setGenres(genres);
+            setLoad(false);         
           } catch(error){
               console.log('getTopGenres', error);
           }
@@ -49,7 +53,8 @@ function MusicPage() {
           try{
             const fetchAlbums = await fetch(`http://deezer.eddypermana.com/chart/0/albums`)
             const albums = await fetchAlbums.json();
-            setAlbums(albums);      
+            setAlbums(albums);
+            setLoad(false);         
           } catch(error){
               console.log('getTopAlbums', error);
           }
@@ -63,16 +68,21 @@ function MusicPage() {
           try{
             const fetchArtists = await fetch(`http://deezer.eddypermana.com/chart/0/artists`)
             const artists = await fetchArtists.json();
-            setArtists(artists);       
+            setArtists(artists);
+            setLoad(false);          
           } catch(error){
               console.log('getTopArtists', error);
           }
         }
         getTopArtists();
     }, [])
-
+    
     return (
-        <Container fluid>
+      <>
+        <div className={load ? "" : "d-none"}>
+          <Loading/>
+        </div>
+        <Container fluid className={load ? "d-none" : ""}>
             <Row>
              <Searchbar/>
             </Row>
@@ -87,6 +97,7 @@ function MusicPage() {
                 <TopAlbums albums={albums.data}/>
                 <TopArtists artists={artists.data}/>
         </Container>
+      </>
     )
 }
 

@@ -5,9 +5,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import GenreArtists from "../components/Artist/GenreArtists";
 import Searchbar from "../components/Searchbar";
+import Loading from "../components/Loading";
 
 function GenreArtistsPage() {
 
+    let [load, setLoad] = useState(true);
     let [artist, setArtist] = useState("");
 
     const { genreId, genreName } = useParams();
@@ -17,7 +19,8 @@ function GenreArtistsPage() {
           try{
             const fetchArtist = await fetch(`http://deezer.eddypermana.com/genre/${genreId}/artists`)
             const artist = await fetchArtist.json();
-            setArtist(artist)     
+            setArtist(artist);   
+            setLoad(false);  
           } catch(error){
               console.log('getGenreArtists', error);
           }
@@ -26,16 +29,21 @@ function GenreArtistsPage() {
     }, [])    
 
     return (
-        <Container fluid>
-            <Row>
-              <Searchbar/>
-            </Row>
-            <Row>
-                <Col>
-                    <GenreArtists artists={artist.data} genre={genreName}/>
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <div className={load ? "" : "d-none"}>
+            <Loading/>
+            </div>
+            <Container fluid className={load ? "d-none" : ""}>
+                <Row>
+                <Searchbar/>
+                </Row>
+                <Row>
+                    <Col>
+                        <GenreArtists artists={artist.data} genre={genreName}/>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     )
 }
 

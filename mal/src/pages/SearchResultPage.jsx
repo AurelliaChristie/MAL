@@ -7,9 +7,11 @@ import Searchbar from "../components/Searchbar";
 import SearchTracks from "../components/Track/SearchTracks";
 import SearchAlbums from "../components/Album/SearchAlbums";
 import SearchArtists from "../components/Artist/SearchArtists";
+import Loading from "../components/Loading";
 
 function SearchResultPage() {
 
+    let [load, setLoad] = useState(true);
     let [tracks, setTracks] = useState("");
     let [albums, setAlbums] = useState("");
     let [artists, setArtists] = useState("");
@@ -21,7 +23,8 @@ function SearchResultPage() {
           try{
             const fetchTracks = await fetch(`http://deezer.eddypermana.com/search/track?q=${keyword}`)
             const tracks = await fetchTracks.json();
-            setTracks(tracks);      
+            setTracks(tracks); 
+            setLoad(false);     
           } catch(error){
               console.log('getSearchTracks', error);
           }
@@ -34,7 +37,8 @@ function SearchResultPage() {
           try{
             const fetchAlbums = await fetch(`http://deezer.eddypermana.com/search/album?q=${keyword}`)
             const albums = await fetchAlbums.json();
-            setAlbums(albums);       
+            setAlbums(albums); 
+            setLoad(false);      
           } catch(error){
               console.log('getSearchAlbums', error);
           }
@@ -48,7 +52,8 @@ function SearchResultPage() {
           try{
             const fetchArtists = await fetch(`http://deezer.eddypermana.com/search/artist?q=${keyword}`)
             const artists = await fetchArtists.json();
-            setArtists(artists);       
+            setArtists(artists); 
+            setLoad(false);      
           } catch(error){
               console.log('getSearchArtists', error);
           }
@@ -57,7 +62,11 @@ function SearchResultPage() {
     }, [keyword])
 
     return (
-        <Container fluid>
+      <>
+        <div className={load ? "" : "d-none"}>
+          <Loading/>
+        </div>
+        <Container fluid className={load ? "d-none" : ""}>
             <Row>
               <Searchbar />
             </Row>
@@ -65,6 +74,7 @@ function SearchResultPage() {
                 <SearchAlbums albums={albums.data} keyword={keyword}/>
                 <SearchArtists artists={artists.data} keyword={keyword}/>
         </Container>
+      </>
     )
 }
 

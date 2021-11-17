@@ -44,25 +44,59 @@ function SearchAlbums({albums, keyword}){
         }
       ]
     }
-
-  return(
-    <div className="my-3">
-      <Container fluid>
-        <Row>
-          <h3 className="mb-3">"{keyword}" Albums</h3>
-        </Row>
-        <Slider {...settings} className="mx-2">
-            {
-                Array.isArray(albums) && albums.map((album) => (
-                  <Col sm={3} className="d-flex justify-content-center" key={album.id}>
-                    <AlbumCard album={album}/>
-                  </Col>
-                ))
-            }
-        </Slider>
-      </Container>
-    </div>
-  )
+  
+  if(Array.isArray(albums) && albums.length === 0){
+    return(
+      <div className="my-3">
+        <Container fluid>
+          <Row>
+            <h3 className="d-inline">"{keyword}" Albums</h3>
+          </Row>
+          <Row className="my-2">
+            <p className="lead">Not Found.</p>
+          </Row>
+        </Container>
+      </div>
+    )
+  } else if(Array.isArray(albums) && albums.length > 20){
+    return(
+      <div className="my-3">
+        <Container fluid>
+          <Row>
+            <h3 className="mb-3">"{keyword}" Albums</h3>
+          </Row>
+          <Slider {...settings} className="mx-2">
+              {
+                  Array.isArray(albums) && albums.slice(0,20).map((album) => (
+                    <Col sm={3} className="d-flex justify-content-center" key={album.id}>
+                      <AlbumCard album={album}/>
+                    </Col>
+                  ))
+              }
+          </Slider>
+        </Container>
+      </div>
+    )
+  } else {
+    return(
+      <div className="my-3">
+        <Container fluid>
+          <Row>
+            <h3 className="mb-3">"{keyword}" Albums</h3>
+          </Row>
+          <Slider {...settings} className="mx-2">
+              {
+                  Array.isArray(albums) && albums.map((album) => (
+                    <Col sm={3} className="d-flex justify-content-center" key={album.id}>
+                      <AlbumCard album={album}/>
+                    </Col>
+                  ))
+              }
+          </Slider>
+        </Container>
+      </div>
+    )
+  }
 }
 
 export default SearchAlbums;

@@ -9,9 +9,11 @@ import ArtistTopTracks from "../components/Track/ArtistTopTracks";
 import ArtistAlbums from "../components/Album/ArtistAlbums";
 import RelatedArtists from "../components/Artist/RelatedArtists";
 import Searchbar from "../components/Searchbar";
+import Loading from "../components/Loading";
 
 function ArtistPage() {
 
+    let [load, setLoad] = useState(true);
     let [artistDetail, setArtistDetail] = useState("");
     let [tracks, setTracks] = useState("");
     let [albums, setAlbums] = useState("");
@@ -24,7 +26,8 @@ function ArtistPage() {
           try{
             const fetchDetail = await fetch(`http://deezer.eddypermana.com/artist/${artistId}`)
             const artistDetail = await fetchDetail.json();
-            setArtistDetail(artistDetail);       
+            setArtistDetail(artistDetail);  
+            setLoad(false);     
           } catch(error){
               console.log('getArtistDetail', error);
           }
@@ -37,7 +40,8 @@ function ArtistPage() {
           try{
             const fetchTracks = await fetch(`http://deezer.eddypermana.com/artist/${artistId}/top`)
             const tracks = await fetchTracks.json();
-            setTracks(tracks);       
+            setTracks(tracks); 
+            setLoad(false);      
           } catch(error){
               console.log('getTopTracks', error);
           }
@@ -50,7 +54,8 @@ function ArtistPage() {
           try{
             const fetchAlbums = await fetch(`http://deezer.eddypermana.com/artist/${artistId}/albums`)
             const albums = await fetchAlbums.json();
-            setAlbums(albums);       
+            setAlbums(albums);
+            setLoad(false);
           } catch(error){
               console.log('getAlbums', error);
           }
@@ -63,7 +68,8 @@ function ArtistPage() {
           try{
             const fetchArtists = await fetch(`http://deezer.eddypermana.com/artist/${artistId}/related`)
             const relatedArtists = await fetchArtists.json();
-            setRelatedArtists(relatedArtists);       
+            setRelatedArtists(relatedArtists); 
+            setLoad(false);      
           } catch(error){
               console.log('getRelatedArtists', error);
           }
@@ -72,7 +78,11 @@ function ArtistPage() {
     }, [artistId])
 
     return (
-        <Container fluid>
+      <>
+        <div className={load ? "" : "d-none"}>
+          <Loading/>
+        </div>
+        <Container fluid className={load ? "d-none" : ""}>
             <Row>
               <Searchbar/>
             </Row>
@@ -91,6 +101,7 @@ function ArtistPage() {
                 <RelatedArtists artists={relatedArtists.data}/>
             </Row>
         </Container>
+      </>
     )
 }
 

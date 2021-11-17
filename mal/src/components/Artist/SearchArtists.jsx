@@ -45,8 +45,41 @@ function SearchArtists({artists, keyword}){
       }
     ]
   }
-
-  return(
+  
+  if(Array.isArray(artists) && artists.length===0){
+    return(
+      <div className="my-3">
+        <Container fluid>
+          <Row>
+            <h3 className="d-inline">"{keyword}" Artists</h3>
+          </Row>
+          <Row className="my-2">
+            <p className="lead">Not Found.</p>
+          </Row>
+        </Container>
+      </div>
+    )
+  } else  if (Array.isArray(artists) && artists.length > 20){
+    return(
+      <div>
+        <Container fluid>
+          <Row>
+            <h3 className="mb-3">"{keyword}" Artists</h3>
+          </Row>
+          <Slider {...settings} className="mx-2">
+              {
+                  Array.isArray(artists) && artists.slice(0,20).map((artist => (
+                    <Col sm={3} className="d-flex justify-content-center" key={artist.id}>
+                      <ArtistCard artist={artist}/>
+                    </Col>
+                  )))
+              }
+          </Slider>
+        </Container>
+      </div>
+    )
+  } else{
+    return(
       <div>
         <Container fluid>
           <Row>
@@ -64,6 +97,7 @@ function SearchArtists({artists, keyword}){
         </Container>
       </div>
     )
-}
+  }
+} 
 
 export default SearchArtists;

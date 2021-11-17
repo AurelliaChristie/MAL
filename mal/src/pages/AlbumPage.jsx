@@ -6,9 +6,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import AlbumDetail from "../components/Album/AlbumDetail";
 import AlbumTracks from "../components/Track/AlbumTracks";
 import Searchbar from "../components/Searchbar";
+import Loading from "../components/Loading";
 
 function AlbumPage() {
 
+  let [load, setLoad] = useState(true);
   let [albumDetail, setAlbumDetail] = useState("");
   let [albumTracks, setAlbumTracks] = useState("");
 
@@ -20,7 +22,7 @@ function AlbumPage() {
         const fetchAlbumDetail = await fetch(`http://deezer.eddypermana.com/album/${albumId}`)
         const albumDetail = await fetchAlbumDetail.json();
         setAlbumDetail(albumDetail);
-        console.log("albumDetail", albumDetail)
+        setLoad(false);
       } catch(error){
           console.log('getAlbumDetail', error);
       }
@@ -33,7 +35,8 @@ function AlbumPage() {
       try{
         const fetchAlbumTracks = await fetch(`http://deezer.eddypermana.com/album/${albumId}/tracks`)
         const albumTracks = await fetchAlbumTracks.json();
-        setAlbumTracks(albumTracks);    
+        setAlbumTracks(albumTracks); 
+        setLoad(false);   
       } catch(error){
         console.log('getAlbumTracks', error);
       }
@@ -42,7 +45,11 @@ function AlbumPage() {
   }, [])
 
     return (
-        <Container fluid>
+      <>
+        <div className={load ? "" : "d-none"}>
+          <Loading/>
+        </div>
+        <Container fluid className={load ? "d-none" : ""}>
             <Row>
               <Searchbar/>
             </Row>
@@ -55,6 +62,7 @@ function AlbumPage() {
                 <AlbumTracks tracks={albumTracks.data} album={albumDetail}/>
             </Row>
         </Container>
+      </>
     )
 }
 
