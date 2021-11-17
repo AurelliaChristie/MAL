@@ -18,7 +18,7 @@ function convertDuration(duration){
 
 function AlbumDetail({album}){
     return(
-    <Container className="py-5">
+    <Container className="pb-5">
       <Row>
         <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end">
             <img src={album.cover_medium} alt={album.title} className="album-img mt-2 mx-1" />
@@ -32,10 +32,12 @@ function AlbumDetail({album}){
           </Row>
           <Row>
             {
-                Array.isArray(album.genres.data) && album.genres.data.map((genre) => (
-                    <Link to={`/genre/${genre.id}/artists`} key={genre.id}>
+                album.genres && album.genres.data.map((genre) => (
+                  <Col key={genre.id}>
+                    <Link to={`/genre/${genre.id}/${genre.name}/artists`}>
                       <Button variant="outline-dark" className="w-auto btn-custom">{genre.name}</Button>
                     </Link>
+                  </Col>
                 ))
             }    
           </Row>

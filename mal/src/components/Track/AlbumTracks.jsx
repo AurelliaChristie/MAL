@@ -25,7 +25,7 @@ function AlbumTracks({tracks, album}){
             </thead>
             <tbody>
                 {
-                    tracks.map((track) => <AlbumTrack track={track} album={album} />)
+                    Array.isArray(tracks) && tracks.map((track) => <AlbumTrack track={track} album={album} />)
                 }
             </tbody>
             </Table>

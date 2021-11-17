@@ -46,24 +46,39 @@ function FollowedArtists({artists}){
     ]
   }
 
-  return(
-      <div>
+  if(Array.isArray(artists) && artists.length === 0){
+    return(
+    <div className="my-3">
         <Container fluid>
           <Row>
-            <h3 className="mb-3">Followed Artists</h3>
+            <h3 className="d-inline">Followed Artists</h3>
           </Row>
-          <Slider {...settings} className="mx-2">
-              {
-                  Array.isArray(artists) && artists.map((artist => (
-                    <Col sm={3} className="d-flex justify-content-center" key={artist.id}>
-                      <ArtistCard artist={artist}/>
-                    </Col>
-                  )))
-              }
-          </Slider>
+          <Row className="my-2">
+            <p className="lead">You haven't followed any artist.</p>
+          </Row>
         </Container>
       </div>
     )
+  } else{
+    return(
+        <div>
+          <Container fluid>
+            <Row>
+              <h3 className="mb-3">Followed Artists</h3>
+            </Row>
+            <Slider {...settings} className="mx-2">
+                {
+                    Array.isArray(artists) && artists.map((artist => (
+                      <Col sm={3} className="d-flex justify-content-center" key={artist.id}>
+                        <ArtistCard artist={artist}/>
+                      </Col>
+                    )))
+                }
+            </Slider>
+          </Container>
+        </div>
+      )
+  }
 }
 
 export default FollowedArtists;

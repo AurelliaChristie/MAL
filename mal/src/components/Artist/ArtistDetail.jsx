@@ -52,7 +52,7 @@ function ArtistDetail({artist}){
     } 
 
     return(
-    <Container className="py-5">
+    <Container className="pb-5">
       <Row>
         <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end">
             <img src={artist.picture_medium} alt={artist.name} className="artist-img mt-2 mx-1" />
