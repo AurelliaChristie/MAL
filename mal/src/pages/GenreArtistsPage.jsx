@@ -7,7 +7,7 @@ import GenreArtists from "../components/Artist/GenreArtists";
 
 function GenreArtistsPage() {
 
-    const { genreId } = useParams();
+    const { genreId, genreName } = useParams();
 
     useEffect(() => {
         async function getGenreArtists() {
@@ -609,7 +609,7 @@ function GenreArtistsPage() {
             </Row>
             <Row>
                 <Col>
-                    <GenreArtists artists={dummy_data.data}/>
+                    <GenreArtists artists={dummy_data.data} genre={genreName}/>
                 </Col>
             </Row>
         </Container>

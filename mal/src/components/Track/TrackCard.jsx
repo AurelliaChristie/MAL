@@ -1,9 +1,10 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, {useContext, useState, useEffect, useRef} from "react";
 import ReactAudioPlayer from "react-audio-player";
 import { useHistory } from "react-router";
 
 import { UserContext } from "../../contexts/UserContext";
 import { FavoriteContext } from  "../../contexts/FavoriteContext";
+import { PlayContext } from "../../contexts/PlayContext";
 
 import "./TrackCard.css"
 
@@ -12,10 +13,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function TrackCard({track}){
 
     let history = useHistory();
-    
+    let audio = useRef(null);
+
     const {user} = useContext(UserContext);
     const {tracks, dispatchTracks} = useContext(FavoriteContext);
+    const {title, dispatchPlay} = useContext(PlayContext);
     const [fav, setFav] = useState(false);
+    const [play, setPlay] = useState(null);
 
     useEffect(() => {
         if(user.loggedIn !== null){
@@ -26,8 +30,7 @@ function TrackCard({track}){
                 setFav(false);
             }
         }
-    },[user.loggedIn, track.id])
-    
+    },[])
 
     const handleFavorite = (event) => {
         event.preventDefault();
@@ -60,6 +63,21 @@ function TrackCard({track}){
         }
     }
 
+    useEffect(() => {
+        if(title.play && title.play !== play){
+            audio.audioEl.current.pause()
+        }
+    }, [title])
+
+    const handlePlay = (event) => {
+        event.preventDefault();
+        setPlay(track.title);
+        dispatchPlay({
+            type: "PLAY",
+            title: track.title
+        })
+    }
+
     return(
     <div className="track mb-4 d-flex justify-content-between text-capitalize">
         <div className="d-flex">
@@ -77,9 +95,11 @@ function TrackCard({track}){
                 src={track.preview}
                 controlsList="nodownload"
                 controls
+                ref={(element) => { audio = element; }}
+                onPlay={(e) => handlePlay(e)}
             />
             <button onClick={(e) => handleFavorite(e)}>
-                <FontAwesomeIcon icon="heart" size="sm" className={`mx-3 my-auto ${fav ? "fav": "text-black"}`}/>
+                <FontAwesomeIcon icon="heart" size="lg" className={`mx-3 my-auto ${fav ? "fav": "text-black btn-heart"}`}/>
             </button>
         </div>
     </div>

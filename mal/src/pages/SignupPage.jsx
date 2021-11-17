@@ -128,10 +128,10 @@ function SignupPage() {
                                 </div>
                             </Form.Group>
                             <div className="submit-btn text-center">
-                                <Button variant="primary" type="submit" className="btn mb-1" id="submit">Submit</Button> <br/>
+                                <Button variant="primary" type="submit" className="btn btn-dark mb-1" id="submit">Submit</Button> <br/>
                                 <small>
                                     <span>Already have an account? | </span>
-                                    <Link to="/login">Log In</Link>
+                                    <Link to="/login" className="link">Log In</Link>
                                 </small>
                             </div>
                         </Form>

@@ -2,3 +2,9 @@
   width: 150px;
   height: 150px;
 }
+
+.btn-custom:hover {
+  background-color: #6558f5 !important;
+  border-color: #6558f5 !important;
+  color: white !important;
+}

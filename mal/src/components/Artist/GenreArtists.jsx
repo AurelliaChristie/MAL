@@ -5,19 +5,19 @@ import {Container, Row, Col} from "react-bootstrap";
 import ArtistCard from "./ArtistCard";
 
 
-function GenreArtists({artists}){
+function GenreArtists({artists, genre}){
 
   return(
     <div className="my-3">
       <Container fluid>
         <Row>
-          <h3 className="mb-3">Genre Name - Artists</h3>
+          <h3 className="mb-3">{genre} - Artists</h3>
         </Row>
         <Row>
             {
-                artists.map((artist) => (
-                  <Col lg={2} md={3} sm={4} xs={6}>
-                    <ArtistCard artist={artist} key={artist.id}/>
+                Array.isArray(artists) && artists.map((artist) => (
+                  <Col lg={2} md={3} sm={4} xs={6} key={artist.id}>
+                    <ArtistCard artist={artist}/>
                   </Col>
                 ))
             }

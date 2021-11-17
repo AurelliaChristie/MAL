@@ -1,22 +1,20 @@
 import React from "react";
-
 import {Container, Row} from "react-bootstrap";
-
 import TrackCard from "./TrackCard";
 
 
-function ArtistTopTracks({tracks}){
+function FavoriteTracks({tracks}){
   return(
-    <div className="my-3">
+    <div className="my-5">
       <Container fluid>
         <Row>
-          <h3 className="d-inline mb-3">Top Tracks</h3>
+          <h3 className="mb-3">Favorite Tracks</h3>
         </Row>
         <Row className="mt-4">
             {
                 Array.isArray(tracks) && tracks.map((track) => (
-                  <div className="d-flex flex-column justify-content-center" key={track.id}>
-                    <TrackCard track={track}/>
+                  <div className="d-flex flex-column justify-content-center">
+                    <TrackCard track={track} key={track.id}/>
                   </div>
                 ))
             }
@@ -26,4 +24,4 @@ function ArtistTopTracks({tracks}){
   )
 }
 
-export default ArtistTopTracks;
+export default FavoriteTracks;

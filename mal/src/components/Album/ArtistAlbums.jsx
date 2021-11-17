@@ -53,9 +53,9 @@ function ArtistAlbums({albums}){
         </Row>
         <Slider {...settings} className="mx-2">
             {
-                albums.map((album) => (
-                  <Col sm={3} className="d-flex justify-content-center">
-                    <AlbumCard album={album} key={album.id}/>
+                Array.isArray(albums) && albums.map((album) => (
+                  <Col sm={3} className="d-flex justify-content-center" key={album.id}>
+                    <AlbumCard album={album}/>
                   </Col>
                 ))
             }

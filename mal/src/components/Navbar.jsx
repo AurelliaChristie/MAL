@@ -32,7 +32,7 @@ function NavBar(){
                         <Nav>
                             <Link to="/login" className="text-white text-decoration-none mx-2 my-auto">Log In</Link>
                             <Link to="/signup">
-                                <Button variant="outline-light">Sign Up</Button>
+                                <Button variant="outline-light" className="btn-dark">Sign Up</Button>
                             </Link>
                         </Nav>
                     </Navbar.Collapse>

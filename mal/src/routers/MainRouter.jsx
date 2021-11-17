@@ -15,21 +15,24 @@ import ProfilePage from "../pages/ProfilePage";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
+import PrivateRoute from "./PrivateRoute";
 
 function MainRouter(){
     return(
         <Router>
             <Navbar />
+            <ScrollToTop />
             <Switch>
-                <Route path="/profile" component={ProfilePage} exact/>
+                <PrivateRoute path="/profile" component={ProfilePage} exact/>
                 <Route path="/signup" component={SignupPage} exact/>
                 <Route path="/login" component={LoginPage} exact/>
                 <Route path="/playlist" component={RadioPage} exact/>
                 <Route path="/playlist/:playlistId" component={PlaylistPage} exact/>
                 <Route path="/album/:albumId" component={AlbumPage} exact/>
                 <Route path="/artist/:artistId" component={ArtistPage} exact/>
-                <Route path="/genre/:genreId/artists" component={GenreArtistsPage} exact/>
+                <Route path="/genre/:genreId/:genreName/artists" component={GenreArtistsPage} exact/>
                 <Route path="/genre" component={GenrePage} exact/>
                 <Route path="/music" component={MusicPage} exact/>
                 <Route path="/" component={HomePage} exact/>

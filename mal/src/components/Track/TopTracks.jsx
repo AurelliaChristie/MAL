@@ -15,9 +15,9 @@ function TopTracks({tracks}){
         </Row>
         <Row className="mt-4">
             {
-                tracks.slice(0,7).map((track) => (
-                  <div className="d-flex flex-column justify-content-center">
-                    <TrackCard track={track} key={track.id}/>
+                Array.isArray(tracks) && tracks.slice(0,7).map((track) => (
+                  <div className="d-flex flex-column justify-content-center" key={track.id}>
+                    <TrackCard track={track}/>
                   </div>
                 ))
             }
