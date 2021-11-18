@@ -21,7 +21,7 @@ function AlbumDetail({album}){
     return(
     <Container className="pb-5">
       <Row>
-        <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end">
+        <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end d-flex justify-content-center align-items-center">
             <img src={album.cover_medium!== null && album.cover_medium !=="" ? album.cover_medium : defaultImage} alt={album.title} className="album-img mt-2 mx-1" />
         </Col>
         <Col lg={10} md={7} sm={6} xs={12} className="text-center text-sm-start my-auto">
@@ -34,7 +34,7 @@ function AlbumDetail({album}){
           <Row>
             {
                 album.genres && album.genres.data.map((genre) => (
-                  <Col key={genre.id}>
+                  <Col className="col-lg-auto" key={genre.id}>
                     <Link to={`/genre/${genre.id}/${genre.name}/artists`}>
                       <Button variant="outline-dark" className="w-auto btn-custom">{genre.name}</Button>
                     </Link>
