@@ -14,7 +14,7 @@ function GenrePage() {
     useEffect(() => {
         async function getAllGenres() {
           try{
-            const fetchGenres = await fetch(`http://deezer.eddypermana.com/genre`)
+            const fetchGenres = await fetch(`https://deezer.eddypermana.com/genre`)
             const genres = await fetchGenres.json();
             setGenre(genres);   
             setLoad(false);    

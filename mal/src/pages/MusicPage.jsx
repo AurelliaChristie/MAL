@@ -22,10 +22,9 @@ function MusicPage() {
     useEffect(() => {
         async function getTopTracks() {
           try{
-            const fetchTracks = await fetch(`http://deezer.eddypermana.com/chart/0/tracks`)
+            const fetchTracks = await fetch(`https://deezer.eddypermana.com/chart/0/tracks`)
             const tracks = await fetchTracks.json();
             setTracks(tracks);
-            setLoad(false);   
           } catch(error){
               console.log('getTopTracks', error);
           }
@@ -36,10 +35,9 @@ function MusicPage() {
     useEffect(() => {
         async function getTopGenres() {
           try{
-            const fetchGenres = await fetch(`http://deezer.eddypermana.com/genre`)
+            const fetchGenres = await fetch(`https://deezer.eddypermana.com/genre`)
             const genres = await fetchGenres.json();
             setGenres(genres);
-            setLoad(false);         
           } catch(error){
               console.log('getTopGenres', error);
           }
@@ -51,10 +49,9 @@ function MusicPage() {
     useEffect(() => {
         async function getTopAlbums() {
           try{
-            const fetchAlbums = await fetch(`http://deezer.eddypermana.com/chart/0/albums`)
+            const fetchAlbums = await fetch(`https://deezer.eddypermana.com/chart/0/albums`)
             const albums = await fetchAlbums.json();
             setAlbums(albums);
-            setLoad(false);         
           } catch(error){
               console.log('getTopAlbums', error);
           }
@@ -66,7 +63,7 @@ function MusicPage() {
     useEffect(() => {
         async function getTopArtists() {
           try{
-            const fetchArtists = await fetch(`http://deezer.eddypermana.com/chart/0/artists`)
+            const fetchArtists = await fetch(`https://deezer.eddypermana.com/chart/0/artists`)
             const artists = await fetchArtists.json();
             setArtists(artists);
             setLoad(false);          

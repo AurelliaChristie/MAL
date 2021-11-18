@@ -19,10 +19,9 @@ function AlbumPage() {
   useEffect(() => {
     async function getAlbumDetail() {
       try{
-        const fetchAlbumDetail = await fetch(`http://deezer.eddypermana.com/album/${albumId}`)
+        const fetchAlbumDetail = await fetch(`https://deezer.eddypermana.com/album/${albumId}`)
         const albumDetail = await fetchAlbumDetail.json();
         setAlbumDetail(albumDetail);
-        setLoad(false);
       } catch(error){
           console.log('getAlbumDetail', error);
       }
@@ -33,7 +32,7 @@ function AlbumPage() {
   useEffect(() => {
     async function getAlbumTracks() {
       try{
-        const fetchAlbumTracks = await fetch(`http://deezer.eddypermana.com/album/${albumId}/tracks`)
+        const fetchAlbumTracks = await fetch(`https://deezer.eddypermana.com/album/${albumId}/tracks`)
         const albumTracks = await fetchAlbumTracks.json();
         setAlbumTracks(albumTracks); 
         setLoad(false);   

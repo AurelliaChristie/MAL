@@ -17,7 +17,7 @@ function SearchTracks({tracks, keyword}){
         </Container>
       </div>
     )
-  } else if(Array.isArray(tracks) && tracks.length > 20){
+  } else if(Array.isArray(tracks) && tracks.filter((track) => track.preview !== "").length > 20){
     return(
       <div className="my-3">
         <Container fluid>
@@ -26,7 +26,7 @@ function SearchTracks({tracks, keyword}){
           </Row>
           <Row className="mt-4">
               {
-                  Array.isArray(tracks) && tracks.slice(0,20).map((track) => (
+                  Array.isArray(tracks) && tracks.filter((track) => track.preview !== "").slice(0,20).map((track) => (
                     <div className="d-flex flex-column justify-content-center" key={track.id}>
                       <TrackCard track={track}/>
                     </div>
@@ -45,7 +45,7 @@ function SearchTracks({tracks, keyword}){
           </Row>
           <Row className="mt-4">
               {
-                  Array.isArray(tracks) && tracks.map((track) => (
+                  Array.isArray(tracks) && tracks.filter((track) => track.preview !== "" && track.preview !== null).map((track) => (
                     <div className="d-flex flex-column justify-content-center" key={track.id}>
                       <TrackCard track={track}/>
                     </div>

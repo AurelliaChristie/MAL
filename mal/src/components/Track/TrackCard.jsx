@@ -8,10 +8,11 @@ import { PlayContext } from "../../contexts/PlayContext";
 
 import "./TrackCard.css"
 
+import defaultImage from "../../images/default-image.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 
 function TrackCard({track}){
-
+    
     let history = useHistory();
     let audio = useRef(null);
 
@@ -76,13 +77,14 @@ function TrackCard({track}){
             type: "PLAY",
             title: track.title
         })
-    }
+    } 
 
+    console.log(track.album.cover_small !== null && track.album.cover_small !== "")
     return(
     <div className="track mb-4 d-flex justify-content-between text-capitalize">
         <div className="d-flex">
             <div>
-                <img src={track.album.cover_small} alt={track.title} className="track-img me-2" />
+                <img src={track.album.cover_small !== null && track.album.cover_small !== ""  ? track.album.cover_small : defaultImage} alt={track.title} className="track-img me-2" />
             </div>
             <div>
                 <h6 className="track-name mb-0 mt-2">{track.title}</h6>
