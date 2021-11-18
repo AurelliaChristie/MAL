@@ -22,7 +22,6 @@ function AlbumPage() {
         const fetchAlbumDetail = await fetch(`https://deezer.eddypermana.com/album/${albumId}`)
         const albumDetail = await fetchAlbumDetail.json();
         setAlbumDetail(albumDetail);
-        setLoad(false);
       } catch(error){
           console.log('getAlbumDetail', error);
       }

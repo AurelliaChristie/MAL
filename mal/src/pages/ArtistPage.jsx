@@ -27,7 +27,6 @@ function ArtistPage() {
             const fetchDetail = await fetch(`https://deezer.eddypermana.com/artist/${artistId}`)
             const artistDetail = await fetchDetail.json();
             setArtistDetail(artistDetail);  
-            setLoad(false);     
           } catch(error){
               console.log('getArtistDetail', error);
           }
@@ -41,7 +40,6 @@ function ArtistPage() {
             const fetchTracks = await fetch(`https://deezer.eddypermana.com/artist/${artistId}/top`)
             const tracks = await fetchTracks.json();
             setTracks(tracks); 
-            setLoad(false);      
           } catch(error){
               console.log('getTopTracks', error);
           }
@@ -55,7 +53,6 @@ function ArtistPage() {
             const fetchAlbums = await fetch(`https://deezer.eddypermana.com/artist/${artistId}/albums`)
             const albums = await fetchAlbums.json();
             setAlbums(albums);
-            setLoad(false);
           } catch(error){
               console.log('getAlbums', error);
           }

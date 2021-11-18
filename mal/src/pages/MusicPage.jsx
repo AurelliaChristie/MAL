@@ -25,7 +25,6 @@ function MusicPage() {
             const fetchTracks = await fetch(`https://deezer.eddypermana.com/chart/0/tracks`)
             const tracks = await fetchTracks.json();
             setTracks(tracks);
-            setLoad(false);   
           } catch(error){
               console.log('getTopTracks', error);
           }
@@ -39,7 +38,6 @@ function MusicPage() {
             const fetchGenres = await fetch(`https://deezer.eddypermana.com/genre`)
             const genres = await fetchGenres.json();
             setGenres(genres);
-            setLoad(false);         
           } catch(error){
               console.log('getTopGenres', error);
           }
@@ -54,7 +52,6 @@ function MusicPage() {
             const fetchAlbums = await fetch(`https://deezer.eddypermana.com/chart/0/albums`)
             const albums = await fetchAlbums.json();
             setAlbums(albums);
-            setLoad(false);         
           } catch(error){
               console.log('getTopAlbums', error);
           }
