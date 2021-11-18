@@ -24,6 +24,7 @@ function ArtistPage() {
     useEffect(() => {
         async function getArtistDetail() {
           try{
+            setLoad(true);
             const fetchDetail = await fetch(`https://deezer.eddypermana.com/artist/${artistId}`)
             const artistDetail = await fetchDetail.json();
             setArtistDetail(artistDetail);  
