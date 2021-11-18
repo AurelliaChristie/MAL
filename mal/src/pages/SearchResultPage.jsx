@@ -21,7 +21,7 @@ function SearchResultPage() {
     useEffect(() => {
         async function getSearchTracks() {
           try{
-            const fetchTracks = await fetch(`http://deezer.eddypermana.com/search/track?q=${keyword}`)
+            const fetchTracks = await fetch(`https://deezer.eddypermana.com/search/track?q=${keyword}`)
             const tracks = await fetchTracks.json();
             setTracks(tracks); 
             setLoad(false);     
@@ -35,7 +35,7 @@ function SearchResultPage() {
     useEffect(() => {
         async function getSearchAlbums() {
           try{
-            const fetchAlbums = await fetch(`http://deezer.eddypermana.com/search/album?q=${keyword}`)
+            const fetchAlbums = await fetch(`https://deezer.eddypermana.com/search/album?q=${keyword}`)
             const albums = await fetchAlbums.json();
             setAlbums(albums); 
             setLoad(false);      
@@ -50,7 +50,7 @@ function SearchResultPage() {
     useEffect(() => {
         async function getSearchArtists() {
           try{
-            const fetchArtists = await fetch(`http://deezer.eddypermana.com/search/artist?q=${keyword}`)
+            const fetchArtists = await fetch(`https://deezer.eddypermana.com/search/artist?q=${keyword}`)
             const artists = await fetchArtists.json();
             setArtists(artists); 
             setLoad(false);      

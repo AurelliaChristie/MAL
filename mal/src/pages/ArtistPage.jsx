@@ -24,7 +24,7 @@ function ArtistPage() {
     useEffect(() => {
         async function getArtistDetail() {
           try{
-            const fetchDetail = await fetch(`http://deezer.eddypermana.com/artist/${artistId}`)
+            const fetchDetail = await fetch(`https://deezer.eddypermana.com/artist/${artistId}`)
             const artistDetail = await fetchDetail.json();
             setArtistDetail(artistDetail);  
             setLoad(false);     
@@ -38,7 +38,7 @@ function ArtistPage() {
     useEffect(() => {
         async function getTopTracks() {
           try{
-            const fetchTracks = await fetch(`http://deezer.eddypermana.com/artist/${artistId}/top`)
+            const fetchTracks = await fetch(`https://deezer.eddypermana.com/artist/${artistId}/top`)
             const tracks = await fetchTracks.json();
             setTracks(tracks); 
             setLoad(false);      
@@ -52,7 +52,7 @@ function ArtistPage() {
     useEffect(() => {
         async function getAlbums() {
           try{
-            const fetchAlbums = await fetch(`http://deezer.eddypermana.com/artist/${artistId}/albums`)
+            const fetchAlbums = await fetch(`https://deezer.eddypermana.com/artist/${artistId}/albums`)
             const albums = await fetchAlbums.json();
             setAlbums(albums);
             setLoad(false);
@@ -66,7 +66,7 @@ function ArtistPage() {
     useEffect(() => {
         async function getRelatedArtists() {
           try{
-            const fetchArtists = await fetch(`http://deezer.eddypermana.com/artist/${artistId}/related`)
+            const fetchArtists = await fetch(`https://deezer.eddypermana.com/artist/${artistId}/related`)
             const relatedArtists = await fetchArtists.json();
             setRelatedArtists(relatedArtists); 
             setLoad(false);      

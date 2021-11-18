@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import {Container, Row, Col, Button} from "react-bootstrap";
+import defaultImage from "../../images/default-image.jpg";
 import "./AlbumDetail.css";
 
 function convertDuration(duration){
@@ -21,7 +22,7 @@ function AlbumDetail({album}){
     <Container className="pb-5">
       <Row>
         <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end">
-            <img src={album.cover_medium} alt={album.title} className="album-img mt-2 mx-1" />
+            <img src={album.cover_medium!== null && album.cover_medium !=="" ? album.cover_medium : defaultImage} alt={album.title} className="album-img mt-2 mx-1" />
         </Col>
         <Col lg={10} md={7} sm={6} xs={12} className="text-center text-sm-start my-auto">
           <Row>

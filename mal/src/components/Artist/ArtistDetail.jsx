@@ -5,6 +5,8 @@ import { useHistory } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 import { FollowContext } from "../../contexts/FollowContext";
 
+import defaultImage from "../../images/default-image.jpg";
+
 import "./ArtistDetail.css";
 
 function ArtistDetail({artist}){
@@ -55,7 +57,7 @@ function ArtistDetail({artist}){
     <Container className="pb-5">
       <Row>
         <Col lg={2} md={5} sm={6} xs={12} className="text-center text-sm-end">
-            <img src={artist.picture_medium} alt={artist.name} className="artist-img mt-2 mx-1" />
+            <img src={artist.picture_medium!== null && artist.picture_medium !== "" ? artist.picture_medium : defaultImage} alt={artist.name} className="artist-img mt-2 mx-1" />
         </Col>
         <Col lg={10} md={7} sm={6} xs={12} className="text-center text-sm-start my-auto">
           <Row>

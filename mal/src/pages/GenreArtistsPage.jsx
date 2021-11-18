@@ -17,7 +17,7 @@ function GenreArtistsPage() {
     useEffect(() => {
         async function getGenreArtists() {
           try{
-            const fetchArtist = await fetch(`http://deezer.eddypermana.com/genre/${genreId}/artists`)
+            const fetchArtist = await fetch(`https://deezer.eddypermana.com/genre/${genreId}/artists`)
             const artist = await fetchArtist.json();
             setArtist(artist);   
             setLoad(false);  
