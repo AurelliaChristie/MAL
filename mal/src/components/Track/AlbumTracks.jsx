@@ -25,7 +25,7 @@ function AlbumTracks({tracks, album}){
             </thead>
             <tbody>
                 {
-                    Array.isArray(tracks) && tracks.filter((track) => track.preview !== "" && track.preview !== null).map((track) => 
+                    Array.isArray(tracks) && tracks.filter((track) => track.readable=== true && track.preview !== "" && track.preview !== null).map((track) => 
                     <AlbumTrack track={track} album={album} />
                     )
                 }
