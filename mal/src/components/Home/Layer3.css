@@ -1,0 +1,49 @@
+.Judul h3{
+    padding: 50px 0px 50px 0px;
+}
+
+.card-img-top {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 20px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+}
+
+.card-text, .card-title{
+    text-align: center;
+}
+
+.list-group-item{
+    font-size: 18px;
+    text-align: center;
+}
+
+.g1, .g2, .g3{
+    padding: 30px 0px 30px 0px;
+}
+
+.card, hr{
+    border: 1px #6558f5 solid !important;
+}
+
+.card-body{
+    padding-top: 0%;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.icon svg{
+    margin: 0px 15px;
+    color: #6558f5;
+}
+
+.card-text svg:hover{
+    color: #212529;
+}

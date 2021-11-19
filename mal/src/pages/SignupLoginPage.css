@@ -1,0 +1,19 @@
+.sl-card {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.link {
+  color: #6558f5;
+}
+
+.link:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .sl-card {
+    width: 75% !important;
+  }
+}

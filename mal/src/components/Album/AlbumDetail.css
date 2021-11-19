@@ -1,0 +1,19 @@
+.album-img {
+  width: 150px;
+  height: 150px;
+}
+
+.btn-custom:hover {
+  background-color: #6558f5 !important;
+  border-color: #6558f5 !important;
+  color: white !important;
+}
+
+@media only screen and (max-width: 559px) {
+  div.col-lg-auto.col{
+    display: flex;
+    justify-content: space-around;
+    flex-basis: content !important;
+    padding: 0px !important;
+  }
+}

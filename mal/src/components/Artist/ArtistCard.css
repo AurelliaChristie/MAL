@@ -1,0 +1,22 @@
+.artist:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.artist .artist-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.artist .artist-name {
+  font-size: 0.8rem;
+  margin: 0;
+  white-space: nowrap;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  text-align: center;
+}
