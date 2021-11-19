@@ -8,14 +8,11 @@ const StyledFooter = styled.footer`
     background-color: #28242c;
     color: white;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    margin-top: 50px
 `
 
 function Footer(){
     return(
-        <StyledFooter>
+        <StyledFooter className="fixed-bottom">
             <div className="text-center py-3">
                 © 2021 Group 21 Skilvul#Tech4Impact. All rights reserved.
             </div>

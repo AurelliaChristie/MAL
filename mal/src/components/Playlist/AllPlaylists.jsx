@@ -11,7 +11,7 @@ function AllPlaylists({playlists}){
         <Row>
           <h3 className="mb-3">Playlists</h3>
         </Row>
-        <Row>
+        <Row className="pb-5">
             {
                 Array.isArray(playlists) && playlists.map((playlist) => (
                   <Col lg={2} md={3} sm={4} xs={6} key={playlist.id}>
@@ -19,7 +19,7 @@ function AllPlaylists({playlists}){
                   </Col>
                 ))
             }
-        </Row>
+          </Row>
       </Container>
     </div>
   )

@@ -7,7 +7,7 @@ import Content3 from "../components/Home/Layer3";
 
 function HomePage() {
     return (
-        <Container fluid>
+        <Container fluid className="px-0">
             <Content1 />
             <Content2 />
             <Content3 />

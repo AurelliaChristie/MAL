@@ -12,7 +12,7 @@ function AllGenres({genres}){
         <Row>
           <h3 className="mb-3">Genres</h3>
         </Row>
-        <Row>
+        <Row className="pb-5">
             {
                 Array.isArray(genres) && genres.map((genre) => (
                   <Col lg={2} md={3} sm={4} xs={6} key={genre.id}>

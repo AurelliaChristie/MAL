@@ -10,7 +10,7 @@ function PlaylistTracks({tracks}){
         <Row>
           <h3 className="d-inline mb-3">Songs</h3>
         </Row>
-        <Row className="mt-4">
+        <Row className="mt-4 pb-5">
             {
                 Array.isArray(tracks) && tracks.filter((track) => track.readable=== true && track.preview !== "" && track.preview !== null).map((track) => (
                   <div className="d-flex flex-column justify-content-center">

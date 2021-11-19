@@ -14,7 +14,7 @@ function Loading() {
     }
     
     return(
-        <Container className="d-flex flex-column align-items-center justify-content-center h-100">
+        <Container className="d-flex flex-column align-items-center justify-content-center min-vh-100">
             <Lottie
                 options={defaultOptions}
                 height={400}

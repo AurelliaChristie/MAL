@@ -1,6 +1,5 @@
 import { useReducer } from "react";
 import MainRouter from "./routers/MainRouter";
-import "./App.css";
 
 import { UserContext } from "./contexts/UserContext";
 import { FavoriteContext } from "./contexts/FavoriteContext";

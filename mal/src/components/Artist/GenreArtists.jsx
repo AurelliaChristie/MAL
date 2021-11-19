@@ -13,7 +13,7 @@ function GenreArtists({artists, genre}){
         <Row>
           <h3 className="mb-3">{genre} - Artists</h3>
         </Row>
-        <Row>
+        <Row className="pb-5">
             {
                 Array.isArray(artists) && artists.map((artist) => (
                   <Col lg={2} md={3} sm={4} xs={6} key={artist.id}>

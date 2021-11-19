@@ -15,7 +15,7 @@ function NotFoundPage() {
     }
     
     return(
-        <Container className="d-flex flex-column align-items-center justify-content-center h-100">
+        <Container className="d-flex flex-column align-items-center justify-content-center min-vh-100 pb-5">
             <Lottie
                 options={defaultOptions}
             />
