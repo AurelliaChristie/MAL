@@ -95,7 +95,7 @@ function ArtistPage() {
             <Row>
                 <ArtistAlbums albums={albums.data}/>
             </Row>
-            <Row>
+            <Row className="pb-5">
                 <RelatedArtists artists={relatedArtists.data}/>
             </Row>
         </Container>

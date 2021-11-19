@@ -66,7 +66,7 @@ function LoginPage() {
     }
 
     return (
-        <Container fluid>
+        <Container fluid className="pb-5">
             <Card className="py-5 p-3 my-3 mx-auto my-5 w-50 sl-card">
                 <Row className="p-2">
                     <Col>

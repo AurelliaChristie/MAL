@@ -10,7 +10,7 @@ function RelatedArtists({artists}){
   
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -52,7 +52,7 @@ function RelatedArtists({artists}){
           <Row>
             <h3 className="mb-3">Fans Also Like</h3>
           </Row>
-          <Slider {...settings} className="mx-2">
+          <Slider {...settings} className="mx-2 pb-5">
               {
                   Array.isArray(artists) && artists.map((artist => (
                     <Col sm={3} className="d-flex justify-content-center" key={artist.id}>

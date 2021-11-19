@@ -33,14 +33,16 @@ function SearchArtists({artists, keyword}){
         breakpoint: 540,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          infinite: true
         }
       },
       {
         breakpoint: 370,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          infinite: true
         }
       }
     ]
@@ -62,7 +64,7 @@ function SearchArtists({artists, keyword}){
   } else  if (Array.isArray(artists) && artists.length > 20){
     return(
       <div>
-        <Container fluid>
+        <Container fluid className="pb-5">
           <Row>
             <h3 className="mb-3">"{keyword}" Artists</h3>
           </Row>

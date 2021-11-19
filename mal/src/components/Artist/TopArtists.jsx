@@ -10,7 +10,7 @@ function TopArtists({artists}){
   
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -33,7 +33,7 @@ function TopArtists({artists}){
         breakpoint: 540,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 1          
         }
       },
       {
@@ -47,7 +47,7 @@ function TopArtists({artists}){
   }
 
   return(
-      <div className="my-3">
+      <div className="my-3 pb-5">
         <Container fluid>
           <Row>
             <h3 className="mb-3">Top Artists</h3>

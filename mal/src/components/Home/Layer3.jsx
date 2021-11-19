@@ -8,7 +8,7 @@ import "../Home/Layer3.css"
 
 function Layer3(){
     return(
-        <div className="Profile">
+        <div className="Profile pb-5">
             <div className="text-center py-3 Judul">
                 <h3>Group 21 Skilvul#Tech4Impact 2021</h3>
             </div>

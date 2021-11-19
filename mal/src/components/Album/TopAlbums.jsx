@@ -9,7 +9,7 @@ function TopAlbums({albums}){
 
     const settings = {
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 5,
       slidesToScroll: 1,
@@ -19,27 +19,31 @@ function TopAlbums({albums}){
           settings: {
             slidesToShow: 4,
             slidesToScroll: 1,
+            infinite:true
           }
         },
         {
           breakpoint: 700,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            infinite:true
           }
         },
         {
           breakpoint: 540,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            infinite:true
           }
         },
         {
           breakpoint: 370,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            infinite:true
           }
         }
       ]

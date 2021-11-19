@@ -12,7 +12,7 @@ function AlbumTracks({tracks, album}){
         <Row>
           <h3 className="d-inline mb-3">Tracks</h3>
         </Row>
-        <Row className="mt-4">
+        <Row className="mt-4 pb-5">
         <Table striped variant="light">
             <thead>
                 <tr>

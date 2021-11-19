@@ -26,21 +26,23 @@ function MainRouter(){
         <Router>
             <Navbar />
             <ScrollToTop />
-            <Switch>
-                <PrivateRoute path="/profile" component={ProfilePage} exact/>
-                <Route path="/signup" component={SignupPage} exact/>
-                <Route path="/login" component={LoginPage} exact/>
-                <Route path="/search/:keyword" component={SearchResultPage} exact/>
-                <Route path="/playlist/:playlistId" component={PlaylistDetailPage} exact/>
-                <Route path="/playlist" component={PlaylistPage} exact/>
-                <Route path="/album/:albumId" component={AlbumPage} exact/>
-                <Route path="/artist/:artistId" component={ArtistPage} exact/>
-                <Route path="/genre/:genreId/:genreName/artists" component={GenreArtistsPage} exact/>
-                <Route path="/genre" component={GenrePage} exact/>
-                <Route path="/music" component={MusicPage} exact/>
-                <Route path="/" component={HomePage} exact/>
-                <Route path="*" component={NotFoundPage} exact/>
-            </Switch>
+            <div className="pb-5">
+                <Switch>
+                    <PrivateRoute path="/profile" component={ProfilePage} exact/>
+                    <Route path="/signup" component={SignupPage} exact/>
+                    <Route path="/login" component={LoginPage} exact/>
+                    <Route path="/search/:keyword" component={SearchResultPage} exact/>
+                    <Route path="/playlist/:playlistId" component={PlaylistDetailPage} exact/>
+                    <Route path="/playlist" component={PlaylistPage} exact/>
+                    <Route path="/album/:albumId" component={AlbumPage} exact/>
+                    <Route path="/artist/:artistId" component={ArtistPage} exact/>
+                    <Route path="/genre/:genreId/:genreName/artists" component={GenreArtistsPage} exact/>
+                    <Route path="/genre" component={GenrePage} exact/>
+                    <Route path="/music" component={MusicPage} exact/>
+                    <Route path="/" component={HomePage} exact/>
+                    <Route path="*" component={NotFoundPage} exact/>
+                </Switch>
+            </div>
             <Footer />
         </Router>
 
